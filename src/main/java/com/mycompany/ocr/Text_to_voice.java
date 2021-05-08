@@ -40,7 +40,6 @@ public class Text_to_voice extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         text = new javax.swing.JTextArea();
         image = new javax.swing.JLabel();
-        bar = new javax.swing.JProgressBar();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -53,8 +52,6 @@ public class Text_to_voice extends javax.swing.JFrame {
         text.setRows(5);
         text.setText("The Text will writen here");
         jScrollPane1.setViewportView(text);
-
-        bar.setForeground(new java.awt.Color(102, 255, 102));
 
         jButton1.setBackground(new java.awt.Color(51, 255, 204));
         jButton1.setText("CHOOSE IMAGE");
@@ -90,10 +87,9 @@ public class Text_to_voice extends javax.swing.JFrame {
                         .addGap(211, 211, 211)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(bar, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2)
                             .addComponent(jButton3))
-                        .addGap(0, 161, Short.MAX_VALUE))
+                        .addGap(0, 253, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -109,9 +105,7 @@ public class Text_to_voice extends javax.swing.JFrame {
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
-                        .addGap(18, 18, 18)
-                        .addComponent(bar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(63, 63, 63)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -155,9 +149,9 @@ public class Text_to_voice extends javax.swing.JFrame {
            System.out.println(str);
            text.setText(str);
            
-        } catch (TesseractException ex) {
+        } catch (Exception ex) {
             System.out.println("Error>>"+ex);
-            JOptionPane.showMessageDialog(null, "Cannot Recognize image!!");
+            JOptionPane.showMessageDialog(null, "Please Select Image");
             //Logger.getLogger(ImageUpload.class.getName()).log(Level.SEVERE, null, ex);
         }}};
         th.start();
@@ -175,7 +169,7 @@ public class Text_to_voice extends javax.swing.JFrame {
             voice.speak(text.getText());
         }catch(Exception e)
         {
-            JOptionPane.showMessageDialog(null, "No image Selected!!!");
+            JOptionPane.showMessageDialog(null, "Cannot Recognize image!!");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -215,7 +209,6 @@ public class Text_to_voice extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JProgressBar bar;
     private javax.swing.JLabel image;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
