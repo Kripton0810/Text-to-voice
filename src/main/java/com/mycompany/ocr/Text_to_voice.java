@@ -160,6 +160,7 @@ public class Text_to_voice extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        Thread th = new Thread(){public void run(){
         Voice voice = VoiceManager.getInstance().getVoice("kevin16");
         
         
@@ -171,6 +172,8 @@ public class Text_to_voice extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Cannot Recognize image!!");
         }
+        }};
+        th.start();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
